@@ -1,5 +1,5 @@
 # GoWallet
-GoWallet - a digital wallet to help a user make payments and receive funds on the 'go' as well track all the transactions on their wallet- implemented in OOP Python - also using Click, Sqlite, SQLAlchemy, Alembic - within a PIPENV - Virtural Environment
+GoWallet - a digital wallet for those on the 'GO' to help you make payments and receive funds fast and flexibly as well as instantly track all the transactions on your wallet- implemented in OOP Python - also using Click, Sqlite, SQLAlchemy, Alembic - within a PIPENV - Virtural Environment
 
 #### By **Edwin Mwaniki**
 
