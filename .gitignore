@@ -1,0 +1,21 @@
+# Virtual environments
+.venv/
+venv/
+env/
+
+# SQLite database file
+gowallet.db
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# IDE files (if applicable)
+.idea/
+.vscode/
+
+# Other common ignores
+*.log
+*.bak
