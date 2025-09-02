@@ -66,7 +66,7 @@ def admin_menu():
             email = click.prompt("2. Enter email of user")
             ibal = click.prompt("3. Assign initial balance")
             try: 
-                add_user(firstname, lastname, email, ibal)
+                add_user(firstname, lastname, email, float(ibal))
                 click.secho(f"Added successfully")
             except Exception as e:
                 click.secho(f"Error adding user, {e}")

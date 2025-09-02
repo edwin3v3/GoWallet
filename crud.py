@@ -22,7 +22,7 @@ def add_user(firstname, lastname, email, ibal):
     session.add(new_wallet)
     
     session.commit()
-    print(f"{YELLOW}User {firstname} added with wallet balance {ibal}")
+    print(f"{YELLOW}User {firstname} added with wallet balance {ibal:,.2f}")
 
 # view all users
 def view_all_users():
@@ -36,7 +36,7 @@ def view_total_balance():
     total = session.query(func.sum(Wallets.balance)).scalar()  # returns a single value
     if total is None:
         total = 0.0
-    print(f"{YELLOW} Total balance in system: {total}")
+    print(f"{YELLOW} Total balance in system: {total:,.2f}")
 
 # add money
 
