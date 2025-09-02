@@ -91,13 +91,13 @@ def view_transactions(session, user_id):
         return
 
     sent_transactions = session.query(Transactions).filter_by(sender_wallet_id = wallet.id).all()
-    print(f"{BOLD}{YELLOW}Sent Transactions for {wallet.users.name}{RESET}")
+    print(f"{BOLD}{YELLOW}Sent Transactions for {wallet.users.firstname}{RESET}")
     print(f"{GREEN}  ID  |   TIME    |  AMOUNT | DESCRIPTION {RESET}")
     for transaction in sent_transactions:
         print(f"{YELLOW}   {transaction.id} | {transaction.timestamp}  |  {transaction.amount}  |   {transaction.description}{RESET}")
 
     received_transactions = session.query(Transactions).filter_by(receiver_wallet_id = wallet.id).all()
-    print(f"{BOLD}{YELLOW}Received Transactions for {wallet.users.name}{RESET}")
+    print(f"{BOLD}{YELLOW}Received Transactions for {wallet.users.firstname}{RESET}")
     print(f"{GREEN}  ID  |   TIME    |  AMOUNT | DESCRIPTION {RESET}")
     for r_transaction in received_transactions:
         print(f"{YELLOW}   {r_transaction.id} | {r_transaction.timestamp}  |  {r_transaction.amount}  |   {r_transaction.description}{RESET}")
@@ -110,7 +110,7 @@ def view_user_balance(user_id):
         print(f"{RED} No wallet found for user_id={user_id}{RESET}")
         return
 
-    print(f"{YELLOW} Total balance for {wallets.users.name} is: {wallets.balance}")
+    print(f"{YELLOW} Total balance for {wallets.users.firstname} is: {wallets.balance}")
 
 
     
