@@ -16,9 +16,11 @@ GoWallet - a digital wallet for those on the 'GO' to help you make payments and 
 - Wallets -> {id, user_id, balance}
 - Transactions -> {id, sender_wallet_id, receiver_wallet_id, timestamp, description, amount}
 
-## Screenshot
+## Screenshots
 
-![The-Mission Screenshot](./the-mission-screenshot.jpg)
+![GoWallet Screenshot 1](./GoWallet-Main-menu.png)
+
+![GoWallet Screenshot 2](./GoWallet-View-All-Users.png)
 
 ## Features
 
@@ -45,13 +47,19 @@ GoWallet - a digital wallet for those on the 'GO' to help you make payments and 
    - Return to Home
 
 ## Extra Features:
-- Validation of user's First Name and Last Name
-- Validation of Initial Balance
+- Validation of inputs
+   - Validation of user's First Name and Last Name
+   - Validation of Initial Balance
+
+## System Requirements
+- 
 
 ## How to Use
 
 This is a Click() Application
 To access it you use either a **Command Prompt** or **Terminal**
+
+
 
 
 The live app allows you to:
