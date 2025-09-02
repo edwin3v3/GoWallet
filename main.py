@@ -15,7 +15,7 @@ def main_menu():
         clear_screen() # clear screen before showing home
         click.secho("#--------------------#", fg="blue")
         click.secho("#                    #", fg="blue")
-        click.secho("#     D-WALLET       #", fg="blue")
+        click.secho("#     GoWallet       #", fg="blue")
         click.secho("# Transact Anywhere  #", fg="blue")
         click.secho("#                    #", fg="blue")
         click.secho("#--------------------#", fg="blue")
@@ -61,12 +61,13 @@ def admin_menu():
         user_option = click.prompt("Select User Option", type = int)
         if user_option == 1:
             click.secho("Register a user", fg = "yellow")
-            name = click.prompt("1. Enter name of user")
+            firstname = click.prompt("1. Enter 1st name of user")
+            lastname = click.prompt("1. Enter 2nd name of user")
             email = click.prompt("2. Enter email of user")
             ibal = click.prompt("3. Assign initial balance")
             try: 
-                add_user(name, email, ibal)
-                click.secho(f"User {name} added successfully")
+                add_user(firstname, lastname, email, ibal)
+                click.secho(f"Added successfully")
             except Exception as e:
                 click.secho(f"Error adding user, {e}")
         
@@ -136,7 +137,7 @@ def transactions_menu():
                 system_credit(session, receiver_id, amount)
                 wallets = session.query(Wallets).filter_by(id=receiver_id).first()
                 users = session.query(Users).filter_by(id=wallets.user_id).first()
-                click.secho(f"System credited {amount} for {users.name}", fg = "magenta", bold = True)
+                click.secho(f"System credited {amount} for {users.firstname}", fg = "magenta", bold = True)
             except Exception as e:
                 click.secho(f"Error adding transactions, {e}")
         
@@ -151,7 +152,7 @@ def transactions_menu():
 
                 #click.secho(f"Transaction successful {sender_wallets.users.name}", fg = "magenta", bold = True)
 
-                description = f"{sender_wallets.users.name} paid {receiver_wallets.users.name}"
+                description = f"{sender_wallets.users.firstname} paid {receiver_wallets.users.firstname}"
 
                 transfer_funds(session, sender_wallet_id, receiver_wallet_id, amount, description)
                 click.secho(f"Transaction successful: {description}", fg = "magenta", bold = True)
