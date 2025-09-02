@@ -19,3 +19,7 @@ __pycache__/
 # Other common ignores
 *.log
 *.bak
+
+# history of commands
+listofcommands.txt
+commands1.txt
