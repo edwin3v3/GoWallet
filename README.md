@@ -18,7 +18,7 @@ GoWallet - a digital wallet for those on the 'GO' to help you make payments and 
 
 ## Screenshots
 
-![GoWallet Screenshot 1](./GoWallet-Main-menu.png)
+![GoWallet Screenshot 1](./GoWallet-Main-menu.jpg)
 
 ![GoWallet Screenshot 2](./GoWallet-View-All-Users.png)
 
