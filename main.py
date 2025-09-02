@@ -1,8 +1,16 @@
 import os
 import click
+import re
 
 from crud import add_user, view_all_users, view_total_balance, system_credit, transfer_funds, view_transactions, view_user_balance
 from models import session, Users, Wallets, Transactions
+
+BOLD = "\033[1m"
+RESET  = "\033[0m"
+RED    = "\033[91m"
+GREEN  = "\033[92m"
+YELLOW = "\033[93m"
+BLUE   = "\033[94m"
 
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')  
@@ -60,12 +68,22 @@ def admin_menu():
 
         user_option = click.prompt("Select User Option", type = int)
         if user_option == 1:
-            click.secho("Register a user", fg = "yellow")
+            click.secho(f"{BOLD}REGISTER A USER", fg = "yellow", bold = True)
+            click.secho("  (*Name should have letters only)", fg = "green")
             firstname = click.prompt("1. Enter 1st name of user")
-            lastname = click.prompt("1. Enter 2nd name of user")
-            email = click.prompt("2. Enter email of user")
-            ibal = click.prompt("3. Assign initial balance")
+            lastname = click.prompt("2. Enter 2nd name of user")
+            email = click.prompt("3. Enter email of user")
+            click.secho("  (*initial Bal cannot be (-)negative)", fg = "green")
+            ibal = click.prompt("4. Assign initial balance")
+            
             try: 
+                if (float(ibal) < 0):
+                    raise click.secho("Balance cannot be negative.", fg = "red")
+                if not re.match(r'^[A-Za-z\s]+$', firstname):
+                    raise click.secho("Name can only have letters and spaces.", fg = "red")
+                
+                if not re.match(r'^[A-Za-z\s]+$',lastname):
+                    raise click.secho("Name can only have letters and spaces.", fg = "red")
                 add_user(firstname, lastname, email, float(ibal))
                 click.secho(f"Added successfully")
             except Exception as e:
