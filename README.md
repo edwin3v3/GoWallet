@@ -12,10 +12,9 @@ GoWallet - a digital wallet for those on the 'GO' to help you make payments and 
 - As a system admin I want to be able to view all users and balances at any given time so that I can know the status and performance of the overall system.
 
 ## Data Entity Structure:
-- Mission -> {id, codename, objective, difficulty, status, location, agentAssigned, classified}
-## Extra Features:
-- Message encryption/decryption, mission difficulty calculator, agent -
-- leaderboard, random mission generator.
+- Users -> {id, firstname, lastname, emails}
+- Wallets -> {id, user_id, balance}
+- Transactions -> {id, sender_wallet_id, receiver_wallet_id, timestamp, description, amount}
 
 ## Screenshot
 
@@ -23,23 +22,37 @@ GoWallet - a digital wallet for those on the 'GO' to help you make payments and 
 
 ## Features
 
-- Home page that displays the Dashboard that has:
-    - Mission Log Panel
-    - Intelligence Panel
-    - Mission Status Panel
-    - Intelligence Status Panel
-    - Intelligence File Panel
-- Mission Operations
-- Secure Communications: with the message log
-- Agents
-- Tools
-- Reports
-- Shows the Time
-- Side Bar: - Home, Missions, Messagelog, Agents, Tools and Reports
+- Main Menu
+    - Send/ Add Money
+    - Personal Report
+    - Admin Section
+    - Exit
+
+- Send/ Add Money
+   - Add Money to Wallet
+   - Send Money(Pay)
+   - Return to Home
+
+- Personal Report
+   - View Transactions
+   - View my balance
+   - Return to Home
+
+- Admin Section  
+   - Register a new user
+   - View all Users
+   - View total balance
+   - Return to Home
+
+## Extra Features:
+- Validation of user's First Name and Last Name
+- Validation of Initial Balance
 
 ## How to Use
 
-Visit the deployed application at: [The Mission](https://the-mission.vercel.app/home)
+This is a Click() Application
+To access it you use either a **Command Prompt** or **Terminal**
+
 
 The live app allows you to:
 
